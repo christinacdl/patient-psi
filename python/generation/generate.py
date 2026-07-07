@@ -42,11 +42,21 @@ def generate_chain(transcript_file, out_file):
         "query": query,
         "format_instructions": pydantic_parser.get_format_instructions()
     })
+    
     llm = ChatOpenAI(
-        model=os.getenv('GENERATOR_MODEL'),
+        api_key=os.getenv('OPENAI_API_KEY'),
+        base_url=os.getenv('OPENAI_BASE_URL'),
+        model=os.getenv('OPENAI_MODEL'),
         temperature=os.getenv('GENERATOR_MODEL_TEMP'),
-        max_retries=2,
-    )
+        max_tokens=4096,
+        verbose=True)
+    
+    
+    # llm = ChatOpenAI(
+    #     model=os.getenv('GENERATOR_MODEL'),
+    #     temperature=os.getenv('GENERATOR_MODEL_TEMP'),
+    #     max_retries=2,
+    # )
     attempts = 0
 
     while attempts < int(os.getenv('MAX_ATTEMPTS')):

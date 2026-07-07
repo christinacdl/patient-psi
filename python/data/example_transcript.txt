@@ -2,7 +2,7 @@ Therapist: Hi. Good to see you again.
 Client: Hi.
 Therapist: Can I take a look at your scores?
 Client: Sure.
-Therapist: While I'm looking at these, just tell me, in your own words, how you've been fe e ling this week.
+Therapist: While I'm looking at these, just tell me, in your own words, how you've been feeling this week.
 Client: Well, I would say I think a little bit better. I don't know if I know exactly why, but I feel a little bit better.
 Client: When I woke up in the morning, I was able to get up more easily. I think that when I was just reading the paper, even the sports section, I felt like I was able to concentrate a little better.
 Therapist: Oh, that's wonderful. I'm really glad to hear that. It looks like you're sleeping better too?
@@ -103,6 +103,6 @@ Therapist: Okay. That's good.
 Client: Then, probably in my weaker moments, I said, "This isn't going to work."
 Therapist: Uh - huh. Meaning this therapy?
 Client: This therapy and all that. So, I went out and had ice cream with my grandson. [expressing additional automatic thoughts] Well, I ought to be doing that anyway. I went for a walk. Well, I ought to be doing that anyway.
-Therapist: So, you got re ally self - critical?
+Therapist: So, you got really self - critical?
 Client: Yeah.
 Therapist: Yeah. All right. I think I'll come back to the rest of the Action Plan in a few minutes.
