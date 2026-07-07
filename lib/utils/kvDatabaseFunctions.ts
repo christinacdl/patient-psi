@@ -1,11 +1,9 @@
-const dotenv = require('dotenv');
-dotenv.config({ path: '.env.local' });
+import { config } from 'dotenv';
+import { readFile } from 'fs/promises';
+import path from 'path';
+import { kv } from '../local-kv';
 
-// Rest of your code 
-
-const { kv } = require('@vercel/kv');
-const { readFile } = require('fs/promises');
-const path = require('path');
+config({ path: '.env.local' });
 
 async function storeDataToKV() {
     try {
@@ -16,7 +14,7 @@ async function storeDataToKV() {
             const id = profile.id;
             const key = `profile_${id}`;
 
-            await kv.set(key, JSON.stringify(profile));
+            await kv.set(key, profile);
             console.log(`Data for ${id} stored successfully with key ${key}`);
 
         }
@@ -66,7 +64,7 @@ async function assignParticipantSessions(userId: string, sessions: string[]) {
     const value = {
         'sessions': sessions
     };
-    await kv.set(key, JSON.stringify(value));
+    await kv.set(key, value);
 }
 
 

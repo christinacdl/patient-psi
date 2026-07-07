@@ -2,7 +2,8 @@
 
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
-import { kv } from '@vercel/kv'
+// import { kv } from '@vercel/kv'
+import { kv } from '@/lib/local-kv'
 
 import { auth } from '@/auth'
 import { CCDResult, CCDTruth, type Chat } from '@/lib/types'

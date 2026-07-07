@@ -21,7 +21,8 @@ import { getPrompt } from '@/app/api/getDataFromKV'
 
 
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY || ''
+  apiKey: process.env.OPENAI_API_KEY || 'EMPTY',
+  baseURL: process.env.OPENAI_BASE_URL || 'http://localhost:8003/v1'
 })
 
 
@@ -46,7 +47,7 @@ async function submitUserMessage(content: string, type: string) {
   let textNode: undefined | React.ReactNode
 
   const ui = render({
-    model: 'gpt-4',
+    model: process.env.OPENAI_MODEL || '/vllm-workspace/gemma-3-12b-it-Q4_K_M.gguf',
     provider: openai,
     initial: <SpinnerMessage />,
     messages: [

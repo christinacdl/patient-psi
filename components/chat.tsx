@@ -145,7 +145,7 @@ export function Chat({ id, className, session, missingKeys }: ChatProps) {
         messages.length ? (
           <Sidebar className="peer absolute inset-y-0 z-30 hidden translate-x-full right-0 border-l bg-muted duration-300 ease-in-out data-[state=open]:translate-x-0 lg:flex lg:w-[400px] xl:w-[600px]">
             {/* @ts-ignore */}
-            <DiagramList userId={session.user.id} chatId={id} />
+            <DiagramList userId={(session?.user as any)?.id || "local-user"} chatId={id}/>
           </Sidebar>) : (<></>)
       }
     </>

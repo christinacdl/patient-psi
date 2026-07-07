@@ -1,6 +1,6 @@
 'use server';
 import { ResultCode } from '@/lib/utils';
-import { kv } from '@vercel/kv';
+import { kv } from '@/lib/local-kv';
 import { getUser } from '../login/actions';
 
 

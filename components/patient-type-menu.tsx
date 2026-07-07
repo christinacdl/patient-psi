@@ -12,17 +12,19 @@ async function fetchPatientProfile(
     setIsStarted: (isStarted: boolean) => void,
     setPatientProfile: (patientProfile: PatientProfile) => void) {
     try {
-        fetch('/api/prompt')
-            .then(response => response.json()
-                .then(data => {
-                    setIsStarted(true);
-                    setPatientProfile(data.profile);
-                })
-            ).catch(error => {
-                console.log(error);
-            });
+        const response = await fetch('/api/prompt');
+        const data = await response.json();
+
+        if (!response.ok || !data?.profile) {
+            console.error('No patient profile returned:', data);
+            alert('No patient profile found. Check python/data/profiles.json.');
+            return;
+        }
+
+        setPatientProfile(data.profile);
+        setIsStarted(true);
     } catch (error) {
-        console.log("error fetching patient profile")
+        console.log('error fetching patient profile', error);
     }
 }
 
